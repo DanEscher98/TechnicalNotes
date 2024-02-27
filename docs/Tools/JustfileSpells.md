@@ -1,4 +1,4 @@
-# 💡 Harness Command-Line Brilliance with Justfile! 🚀
+# 💡 Just harness Command-Line spells! 💫
 
 Do your genius command-line ideas wander aimlessly without a home? Fear not,
 for [`just`](https://github.com/casey/just) is here to save the day! While
@@ -7,8 +7,6 @@ by focusing on human-readable command execution. In this tutorial, we'll use it
 to set up a workflow to effortlessly capture, organize, and execute your
 oneliner commands in a clean and concise manner. Let's embark on this adventure
 and bring your command-line brilliance to life! 🌟
-
-
 
 ## Justfile
 
@@ -25,7 +23,7 @@ gh install casey/just
 ```
 
 Then add the following lines to your `shell` config file to create an alias, so
-you don't mess with `just` if you use if for other projects.
+you don't mess with `just` if you use it for other projects.
 
 ```bash
 # For Bash at ~/.bashrc
@@ -35,14 +33,31 @@ alias spell="just --justfile ~/Justfile"
 alias spell = just --justfile ~/Justfile
 ```
 
-## Suggested workflow
+Now, a basic `Justfile` could look like this. Very similar to a `Makefile` with
+a simplified syntax.
+
+```makefile
+set shell := ["bash", "-c"]
+
+# Print the contents of `~/Justfile`
+self:
+    bat --plain -n --language=make ~/Justfile
+```
+
+One of the best parts of using `just` is that the comments above each snippet
+generates its own documentation :D As you can see, it's possible to add
+arguments for each command.
+
+![just list](img/spells-a.png)
+
+## Suggested Justfile
 
 The following is my personal `Justfile` where I keep my occasional and funny
 occurrences. I located it at `$HOME/`. Also, this example may give a fair idea
 of the possibilities of `just`, as argument handling, optional arguments and
 command pipelines. Use it as an inspiration! 🤓
 
-```make
+```makefile
 set shell := ["bash", "-c"]
 
 # Print contents of `~/Justfile`
@@ -80,21 +95,6 @@ gpt PROMPT:
     --volume gpt-cache:/tmp/shell_gpt ghcr.io/ther1d/shell_gpt "{{PROMPT}}"
 ```
 
-In the previous `Justfile` I've used a couple of commands that I encorage you to checkout ✨:
-
-- [`bat`](https://github.com/sharkdp/bat) A `cat(1)` clone with wings
-- [`lolcat`](https://github.com/busyloop/lolcat) Rainbows and unicorns!
-- [`fzf`](https://github.com/junegunn/fzf) A command-line fuzzy finder
-- [`espeak`](https://github.com/espeak-ng/espeak-ng) A speech synthesizer
-- [`podman`](https://podman.io/) A daemonless tool to manage containers
-
-## Usage
-
-One of the best parts of using `just` is that the comments above each snippet
-generates its own documentation :D
-
-![just list](img/spells-a.png)
-
 Now you'll have a convenient place where to put all those pilgrim ideas
 
 ![spell-b](img/spells-b.png)
@@ -102,6 +102,18 @@ Now you'll have a convenient place where to put all those pilgrim ideas
 ![spell-d](img/spells-d.png)
 ![spell-e](img/spells-e.png)
 
+
 ## Conclusion
 
-Hope you've enjoyed this tutorial. For further details the [`just` official docs](). Happy scripting!
+In the previous `Justfile` I've used a couple of commands that I encorage you
+to checkout ✨:
+
+* [`bat`](https://github.com/sharkdp/bat) A `cat(1)` clone with wings
+* [`lolcat`](https://github.com/busyloop/lolcat) Rainbows and unicorns!
+* [`fzf`](https://github.com/junegunn/fzf) A command-line fuzzy finder
+* [`espeak`](https://github.com/espeak-ng/espeak-ng) A speech synthesizer   
+* [`podman`](https://podman.io/) A daemonless tool to manage containers
+    
+Hope you've enjoyed this tutorial. For further details the `just` official
+docs. Happy scripting!
+

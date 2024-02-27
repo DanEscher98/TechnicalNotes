@@ -1,3 +1,4 @@
 - [Languages](Languages/)
+    - [Learn Verilog](Languages/LearnVerilog/)
 - [Tools](Tools/)
 - [Hardware](Hardware/)
